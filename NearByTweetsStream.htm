@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+
+	<!-- JQuery JS -->
+  <script language=JavaScript src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+  <script language=JavaScript src="js/jquery.nearbytweet.stream.js" type="text/javascript"></script>
+  <script language=JavaScript src="js/modernizr-1.5.min.js" type="text/javascript"></script>
+	<style type="text/css">
+	#TwitterStream { height: 400px;  margin: auto; width: 500px }
+
+	</style>
+
+</head>
+<body> 
+
+<div id="TwitterStream"></div>
+
+</body>
+</html>
+
+
+<script type="text/javascript"> 
+
+$(document).ready(function(){
+  if (Modernizr.geolocation){
+	  navigator.geolocation.getCurrentPosition(function(position) {
+	    var options = {
+	    	latitude: position.coords.latitude,
+	    	longtitude: position.coords.longitude
+	    };
+			$('#TwitterStream').jqNearbyTweetStream(options);
+	  }); 
+	} else {
+		window.console && console.log('the browser does not support HTML5');
+		$('#TwitterStream').jqNearbyTweetStream();
+	}
+		
+}); 
+// end document ready
+
+</script>
