@@ -2,7 +2,7 @@
  * jQuery NearBy Tweet Stream Plugin
  * Copyright (c) 2010 Wongso Wijaya
  * Version: 0.1 (17 Aug 10)
- * Requires: jQuery v1.4.2
+ * Requires: jQuery v1.4.2 
  */
  
 ;(function($) {
